@@ -26,6 +26,9 @@ Esta aplicación web utiliza React para crear una interfaz de usuario dinámica 
 ## Dependencias y links de interes
 
 1. Vitest with React Testing Library : https://www.robinwieruch.de/vitest-react-testing-library/
+2. How can I use GitHub Actions with Vercel: https://vercel.com/guides/how-can-i-use-github-actions-with-vercel
+3. Environment Variables and Modes: https://vitejs.dev/guide/env-and-mode
+4. Vercel CLI Overview: https://vercel.com/docs/cli
 
 ## Contribución
 
