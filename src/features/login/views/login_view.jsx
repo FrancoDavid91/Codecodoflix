@@ -14,31 +14,34 @@ const LoginView = () => {
 
     try {
       e.preventDefault()
-      const form = e.target 
+      const form = e.target
       const formData = new FormData(form)
       const { email, password } = Object.fromEntries(formData)
-     //const { email, password } = Object.fromEntries(new formData(e.target)) <--- Alternativa
-  
+      //const { email, password } = Object.fromEntries(new formData(e.target)) <--- Alternativa
+
       form.reset()
 
       await login(email, password)
-      
+
     } catch (error) {
       setError(error.response.data.msg)
-    } finally{
+    } finally {
       setIsLoading(false)
     }
   }
-  
+
   return (
-    <div>
-      <h1>Codecodoflix</h1>
-      
-      <form onSubmit={handleSubmit}>
-        <input type="email" name="email" placeholder="e-mail" />
-        <input type="password" name="password" placeholder="Password" />
-        <button type="submit">Iniciar Sesión</button>
-      </form>
+    <div className='container-login'>
+      <div className='login-box'>
+        <img src="../../../src/assets/titulo-imagen.png" alt="Título codecodoflix" />
+
+        <form onSubmit={handleSubmit}>
+          <input type="email" name="email" placeholder="e-mail" />
+          <input type="password" name="password" placeholder="Password" />
+          <button className='btn btn-open' type="submit">Iniciar Sesión</button>
+        </form>
+
+      </div>
     </div>
   )
 }

@@ -1,13 +1,19 @@
 import React from 'react'
-import {AppSwiper} from '../app_swipper/app_swiper'
+import { AppSwiper } from '../app_swipper/app_swiper'
 import AppSwiperSlide from '../app_swipper/components-swiper/app_swiper_slide'
 import AppTitle from '../app_title/app_title'
 
 
-const AppCarouselSection = ({title, data}) => {
+const AppCarouselSection = ({ title, data }) => {
     return (
         <>
-            <AppTitle>{title}</AppTitle>
+            <AppTitle><h3 style={{
+                padding: "15px",
+                fontWeight: "300"
+            }}>
+                {title}
+            </h3>
+            </AppTitle>
             <AppSwiper>
                 {data?.map((e) => (
                     <AppSwiperSlide key={e.id}>
