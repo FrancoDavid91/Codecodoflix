@@ -31,6 +31,8 @@ Esta aplicación web utiliza React para crear una interfaz de usuario dinámica 
 4. Vercel CLI Overview: https://vercel.com/docs/cli
 5. React Router: https://reactrouter.com/en/main
 6. Axios dependency: https://www.npmjs.com/package/react-axios
+7. Swiper: https://swiperjs.com/element
+8. SWR: https://swr.vercel.app/docs/getting-started
 
 ## Pasos de armado base del proyecto
 

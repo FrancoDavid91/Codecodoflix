@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 
 export const AppSwiper = ({ children }) => {
   const swiperElRef = useRef(null);

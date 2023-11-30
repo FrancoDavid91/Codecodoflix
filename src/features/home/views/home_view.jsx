@@ -1,35 +1,77 @@
-import React from 'react'
+import AppCard from '../../../core/components/app_card/app_card'
 import { useAuth } from '../../../core/auth/hook/use_auth'
-import { authApi } from '../../../core/datasource/remote/auth/auth_api'
-import AppButton from '../../../core/components/app_button/app_button'
-import { AppSwiper } from '../../../core/components/app_swipper/app_swiper'
-import AppSwiperSlide from '../../../core/components/app_swipper/components-swiper/app_swiper_slide'
-import { getPopularMovies } from '../services/movies.services'
+import AppCarouselSection from '../../../core/components/app_carousel_section/app_carousel_section'
+import { getPopularMovies, getTopRatedMovies, getUpcomingMovies } from '../services/movies.services'
+import { getAiringTodayTv, getPopularTv, getTopRatedTv } from '../services/tv.service'
+
+import useSWR from 'swr'
+
+
 
 const HomeView = () => {
 
-  getPopularMovies()
+  const { logout } = useAuth()
+
+  //Uso SWR library para manejar peticiones
+  //------Movies--------
+  const { data: popularMovies,
+          error: popularMoviesError,
+          isLoading: popularMoviesIsLoading,
+        } = useSWR('getPopularMovies', getPopularMovies)
+
+  const { data: topRatedMovies,
+          error: topRatedMoviesError,
+          isLoading: topRatedMoviesIsLoading,
+        } = useSWR('getTopRatedMovies', getTopRatedMovies)
+
+  const { data: upComingMovies,
+          error: upComingMoviesError,
+          isLoading: upComingMoviesIsLoading,
+        } = useSWR('getUpComingMovies', getUpcomingMovies)
+  //------Tv--------
+  const { data: popularTv,
+          error: popularTvError,
+          isLoading: popularTvIsLoading,
+        } = useSWR('getPopularTv', getPopularTv)
+
+  const { data: topRatedTv,
+          error: topRatedTvError,
+          isLoading: topRatedTvIsLoading,
+        } = useSWR('getTopRatedTv', getTopRatedTv)
+
+  const { data: airingTodayTv,
+          error: airingTodayTvError,
+          isLoading: airingTodayTvIsLoading,
+        } = useSWR('getAiringTodayTv', getAiringTodayTv)
 
   return (
+    <>
     <div>
-      <h1>Peliculas</h1>
-      <AppSwiper>
-        {Array.from({ length: 10 }).map((_, i) => (
-          <AppSwiperSlide key={i}>
-            <div
-              style={{
-                width: "150px",
-                height: "250px",
-                backgroundColor: 'red'
-              }}
-            >
-              <h3>{i}</h3>
-            </div>
-          </AppSwiperSlide>
-        ))}
-      </AppSwiper>
+      <button onClick={logout}>Cerrar Sesión</button>
     </div>
+    <div>
+      <AppCarouselSection title={"Popular Movies"} data={popularMovies}></AppCarouselSection>
+      <AppCarouselSection title={"Top Rated Movies"} data={topRatedMovies}></AppCarouselSection>
+      <AppCarouselSection title={"Upcoming Movies"} data={upComingMovies}></AppCarouselSection>
+
+      <AppCarouselSection title={"Popular Tv"} data={popularTv}></AppCarouselSection>
+      <AppCarouselSection title={"Top Rated Tv"} data={topRatedTv}></AppCarouselSection>
+      <AppCarouselSection title={"Airing Today Tv"} data={airingTodayTv}></AppCarouselSection> 
+    </div>
+    </>
   )
 }
 
 export default HomeView
+
+
+
+{/* <AppCard
+  width="300px"
+  height="150px"
+  backgroundImageSrc="https://picsum.photos/300/150"
+>
+  <AppCard.Header>HEADER</AppCard.Header>
+  <AppCard.Body>BODY</AppCard.Body>
+  <AppCard.Footer>FOOTER</AppCard.Footer>
+</AppCard> */}
