@@ -49,7 +49,7 @@ const HomeView = () => {
     <>
       <div className='container-header'>
         <div>
-          <img src="/../../../src/assets/tituloImagen.png" alt="Título codecodoflix" />
+          <img src="/../../../public/tituloImagen.png" alt="Título codecodoflix" />
           <h3>HOME</h3>
         </div>
         <button onClick={logout} className='btn btn-close'>Cerrar Sesión</button>
