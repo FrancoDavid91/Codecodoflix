@@ -29,6 +29,24 @@ Esta aplicación web utiliza React para crear una interfaz de usuario dinámica 
 2. How can I use GitHub Actions with Vercel: https://vercel.com/guides/how-can-i-use-github-actions-with-vercel
 3. Environment Variables and Modes: https://vitejs.dev/guide/env-and-mode
 4. Vercel CLI Overview: https://vercel.com/docs/cli
+5. React Router: https://reactrouter.com/en/main
+6. Axios dependency: https://www.npmjs.com/package/react-axios
+
+## Pasos de armado base del proyecto
+
+1) Creamos el proyecto de React con Vite.
+2) Instalamos las dependencias de testing.
+3) Creamos el repo en GitHub.
+4) Creamos el proyecto en Vercel.
+5) Generamos el token de Vercel.
+6) Instalamos el CLI de Vercel.
+7) Iniciamos sesión en Vercel (CLI).
+8) Linkeamos el proyecto en Vercel.
+9) Creamos ramas en GitHub.
+10) Configuramos el proyecto en Vercel (creando 3 dominios y evitando el auto deploy).
+11) Configuramos las variables de entorno en GitHub.
+12) Creamos la carpeta .github y los pipelines para las actions.
+13) Igualamos los repositorios en todos los entornos para que estén iguales.
 
 ## Contribución
 
