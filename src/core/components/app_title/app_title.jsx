@@ -2,7 +2,7 @@ import React from 'react'
 
 const AppTitle = ({ children, ...props }) => {
     return (
-      <h2
+      <h3
         {...props}
         style={{
           color: "white",
@@ -13,7 +13,7 @@ const AppTitle = ({ children, ...props }) => {
         }}
       >
         {children}
-      </h2>
+      </h3>
     );
   };
   

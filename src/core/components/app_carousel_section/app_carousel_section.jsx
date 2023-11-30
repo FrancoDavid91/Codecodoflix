@@ -7,12 +7,13 @@ import AppTitle from '../app_title/app_title'
 const AppCarouselSection = ({ title, data }) => {
     return (
         <>
-            <AppTitle><h3 style={{
+            <AppTitle><div
+            style={{
                 padding: "15px",
                 fontWeight: "300"
             }}>
                 {title}
-            </h3>
+            </div>
             </AppTitle>
             <AppSwiper>
                 {data?.map((e) => (
