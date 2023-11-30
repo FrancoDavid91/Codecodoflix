@@ -49,12 +49,12 @@ const HomeView = () => {
     <>
       <div className='container-header'>
         <div>
-          <img src="../../../src/assets/titulo-imagen.png" alt="Título codecodoflix" />
+          <img src="/../../../src/assets/tituloImagen.png" alt="Título codecodoflix" />
           <h3>HOME</h3>
         </div>
         <button onClick={logout} className='btn btn-close'>Cerrar Sesión</button>
       </div>
-      
+
       <div className='container-corousel'>
         <AppCarouselSection title={"Popular Movies"} data={popularMovies}></AppCarouselSection>
         <AppCarouselSection title={"Top Rated Movies"} data={topRatedMovies}></AppCarouselSection>
