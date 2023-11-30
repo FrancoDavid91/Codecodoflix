@@ -8,7 +8,6 @@ export const tmdb_api = axios.create({
   }
 })
 
-console.log(import.meta.env.VITE_APP_TMDB_API_KEY)
 
 export const tmdb_paths = {
   movies: {
