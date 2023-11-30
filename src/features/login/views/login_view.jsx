@@ -33,7 +33,7 @@ const LoginView = () => {
   return (
     <div className='container-login'>
       <div className='login-box'>
-        <img src="/public/tituloImagen.png" alt="Título codecodoflix" />
+        <img src="/tituloImagen.png" alt="Título codecodoflix" />
 
         <form onSubmit={handleSubmit}>
           <input type="email" name="email" placeholder="e-mail" autoComplete="current-email"/>
